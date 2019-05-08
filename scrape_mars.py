@@ -50,7 +50,7 @@ def scrape():
     title_list = soup.select("div.description > a > h3")
     title_list = [title.text.rsplit(" ",1)[0] for title in title_list]
 
-    #This will only run from the initial page defined in this section
+    #This will only run from the initial page defined in this section. Use browser.visit() to use the actual links.
     for i in range(len(title_list)):
         browser.find_by_css("div.description > a")[i].click()
         #mechanical_soup has a get_current_page_function which returns the equivalent of soup here
